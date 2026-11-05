@@ -13,12 +13,13 @@ body {
 nav > a { text-decoration: none; }
 
 .art-box {
-    max-width: 320px; max-height: 320px;
-	overflow: hidden;
-    display: block;
+    width: 320px; height: 320px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
     margin: 1em;
 }
-.art-box > img { height: 100%; }
 
 .wrapper {
 	max-width: 1500px;
@@ -149,16 +150,6 @@ article a:hover {
 .text-shadow { text-shadow: 0 0 3px var(--color1); }
 .box-shadow { box-shadow: 0 0 3px var(--color1); }
 .box-shadow-secondary { box-shadow: 0 0 3px var(--color2); }
-
-.art-gallery {
-	display: grid;
-	grid-auto-rows: 1fr;
-	grid-template-columns: repeat(4, 1fr);
-	width: fit-content;
-	margin: auto;
-	justify-content: space-between;
-	width: 100%;
-}
 
 a {
 	text-decoration: underline;
