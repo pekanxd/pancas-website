@@ -1,7 +1,8 @@
 :root {
-	--color1: aqua;
-	--color2: #000e28;
-    --color3: black;
+	--color1: #d89488; /*#bf7481;*/ /*#b2749d;*/    /* aqua */
+	--color2: #000e28; /* deep dark blue */
+    --color3: black;   /* black */
+    --color4: white;   /* white*/
 }
 ::selection {
 	background-color: var(--color1);
@@ -10,7 +11,8 @@
 }
 
 body {
-	font-family: Verdana, sans-serif;
+	/*font-family: Verdana, sans-serif;*/
+    font-family: "Garamond", Georgia, serif, 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji'
 	font-size: large;
 	color: var(--color1);
 	background-color: var(--color2);
@@ -21,8 +23,8 @@ nav > a {
     margin-right: 10px;
     padding: 5px 10px;
     font-weight: bold;
+    &:hover { background-color: var(--color1); color: var(--color3) }
 }
-nav > a:hover { background-color: var(--color1); color: var(--color3) }
 h1, h2, h3, h4, h5, h6 { font-weight: 400; font-style: normal; }
 p { line-height: 1.5; }
 a { color: var(--color1); text-decoration: none; text-decoration: underline; text-decoration-thickness: 2px; }
@@ -30,41 +32,57 @@ article a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
 
 .art-gallery {
     --art-size: 320px;
-    display: grid;
     grid-auto-rows: var(--art-size);
     grid-template-columns: repeat(4, var(--art-size));
     grid-gap: 5px;
     width: fit-content;
+    display: grid;
     margin: auto;
+
+    @media screen and (max-width: calc(4 * 320px + 3 * 5px + 2em)) { grid-template-columns: repeat(3, var(--art-size)); }
+    @media screen and (max-width: calc(3 * 320px + 2 * 5px + 2em)) { grid-template-columns: repeat(2, var(--art-size)); }
+    @media screen and (max-width: calc(2 * 320px + 1 * 5px + 2em)) { grid-template-columns: repeat(1, var(--art-size)); }
 }
-@media screen and (max-width: calc(4 * 320px + 3 * 5px + 2em)) { .art-gallery { grid-template-columns: repeat(3, var(--art-size)); } }
-@media screen and (max-width: calc(3 * 320px + 2 * 5px + 2em)) { .art-gallery { grid-template-columns: repeat(2, var(--art-size)); } }
-@media screen and (max-width: calc(2 * 320px + 1 * 5px + 2em)) { .art-gallery { grid-template-columns: repeat(1, var(--art-size)); } }
+
 
 .art-box {
     display: flex;
+    position: relative;
     overflow: hidden;
     justify-content: center;
     align-items: center;
+
+    & > span {
+        width: 100%; height: 100%;
+        position: absolute; top: 0; left: 0; box-sizing: border-box;
+        background-color: rgba(0, 0, 0, 0.5); color: var(--color4);
+        transition: opacity 0.2s;
+        padding: 1em; padding-top: 10em;
+        font-size: x-large; text-shadow: 2px 2px 5px var(--color3);
+        opacity: 0.0;
+        &:hover { opacity: 1.0; }
+    }
 }
+
+
 .wrapper {
-	max-width: 1500px;
-	margin: auto;
-	min-height: 100vh;
-	padding: 0 1em;
+	max-width: 1500px; min-height: 100vh;
 	box-sizing: border-box;
+	margin: auto; padding: 0 1em;
 }
+
 .text-ellipsis {
+	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
-	text-overflow: ellipsis;
 }
+
 .resizable-image {
-	display: block;
 	max-width: 100%;
 	max-height: 100%;
 	width: auto;
 	height: auto;
+	display: block;
 	margin: auto;
 }
 
