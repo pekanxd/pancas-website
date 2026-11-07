@@ -1,5 +1,5 @@
 :root {
-	--color1: #d89488; /*#bf7481;*/ /*#b2749d;*/    /* aqua */
+	--color1: lightgrey; /*#d89488;*/ /*#bf7481;*/ /*#b2749d;*/    /* aqua */
 	--color2: #000e28; /* deep dark blue */
     --color3: black;   /* black */
     --color4: white;   /* white*/
@@ -11,8 +11,7 @@
 }
 
 body {
-	/*font-family: Verdana, sans-serif;*/
-    font-family: "Garamond", Georgia, serif, 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji'
+	font-family: Segoe Print, Verdana, sans-serif, 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji';
 	font-size: large;
 	color: var(--color1);
 	background-color: var(--color2);
@@ -57,7 +56,7 @@ article a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
         position: absolute; top: 0; left: 0; box-sizing: border-box;
         background-color: rgba(0, 0, 0, 0.5); color: var(--color4);
         transition: opacity 0.2s;
-        padding: 1em; padding-top: 10em;
+        padding: 1em; padding-top: 9em;
         font-size: x-large; text-shadow: 2px 2px 5px var(--color3);
         opacity: 0.0;
         &:hover { opacity: 1.0; }
